@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.todo-input{
+    height: 150px;
+    display: inherit;
+    flex-flow: inherit;
+    justify-content: center;
+    align-items: center;
+}
+.todo-input>input[type=text]{
+    height: 35px;
+    width: 300px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.7px solid thistle;
+    outline: none;
+    content: "Some Text";
+}
+
+.todo-input>input[type=button]{
+    margin-top: 12px;
+    height: 30px;
+    width: 75px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in;
+}
+
+.todo-input>input[type=button]:hover{
+   
+    animation: button-animate 0.5s ease-in 1 both;
+    color: black;
+    text-overflow: clip;
+}
+
+
+@keyframes button-animate {
+    0%{
+        border-top: 1px solid #70e1f5;
+        border-radius: 25px;
+    }
+    20%{
+        border-left: 1px solid #70e1f5;
+        border-radius: 25px;
+    }
+    40%{
+        border-bottom: 1px solid #70e1f5;
+        border-radius: 25px;
+    }
+    60%{
+        border-right: 1px solid #70e1f5;
+        border-radius: 25px;
+    }
+    80%{
+        
+    }
+    100%{
+        border-radius: 25px;
+        background: #70e1f5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+}
+
+.todo-output{
+    height: 250px;
+    width: 100%;
+    margin-left: auto;
+    background-color: transparent;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+    
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+  }
+  .span{
+      transform: translate(130px,-20px);
+      color: white;
+  }
+
+
+.todo-output>.list-todo{
+    width: 70%;
+    display: inherit;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+    height: 40px;
+    margin: 12px 0;
+    padding: 12px 8px;
+    background: #70e1f5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 12px;
+    opacity: 1;
+    
+}
+
+@keyframes animate-todo-list{
+    from{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 1;
+    }
+}

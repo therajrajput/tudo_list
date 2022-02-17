@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="tudo_style.css">
+    <script src="https://kit.fontawesome.com/79cd4a257f.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <section class="main">
+        <div class="todo-input">
+            <input type="text" id="todo-name" class="input" onchange="updateSpan()">
+            <span id="length_count" class="span">0/140</span>
+            <input type="button" value="Save" onclick="saveToDo()">
+            <div class="animate"></div>
+        </div>
+        <div class="todo-output" id="list">
+            
+        </div>
+        
+    </section>
+
+    <script>
+        var todo_num = 0;
+function saveToDo(){
+var todo_name = document.getElementById('todo-name').value
+document.getElementById('list').innerHTML += "<div class=\"list-todo\" id"+"=\"delete-"+todo_num+"\"><span>"+todo_name+"</span><pre> <span>"+todo_name.length+"</span> </pre> <a href=\"javascript:del(\'delete-"+todo_num+"\');\"><i class=\"fas fa-trash\"></i></a></div>";
+document.getElementById('delete-'+todo_num).style.animation = "animate-todo-list 0.5s ease-in 1s both";
+todo_num +=1;
+document.getElementById("tayan2").innerhtml = neetesh420;
+    
+}
+
+function del(n){
+    document.getElementById(n).remove();
+}
+function updateSpan(){
+			var a = document.getElementById("todo-name").value;
+			document.getElementById('length_count').innerHTML = a.length+"/140";
+         
+		}
+
+
+    </script>
+</body>
+</html>
